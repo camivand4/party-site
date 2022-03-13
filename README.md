@@ -1,3 +1,5 @@
+# Mijn database is corrupt geraakt dus deze lukt niet om up te loaden
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
