@@ -155,7 +155,7 @@ function App() {
     info.map((info) => {
       // pp_info_firestore
       let pp_info_firestore = document.createElement('h2')
-      pp_info_firestore.innerHTML = '€' + info.price / info.deelnemers
+      pp_info_firestore.innerHTML = '€' + Math.round(info.price / info.deelnemers)
       div_right.appendChild(pp_info_firestore);
     })
 
@@ -165,7 +165,7 @@ function App() {
     div_right.appendChild(paid);
 
     users.map((user) => {
-      if (user.paid == true) {
+      if (user.paid === true) {
         // user_div_paid
         let user_div_paid = document.createElement('div')
         user_div_paid.classList.add('user')
@@ -215,7 +215,7 @@ function App() {
   let checkPassword = () => {
     let password = document.getElementById('password');
 
-    if (password.value == 'pijpketel') {
+    if (password.value === process.env.REACT_APP_PASSWORD) {
       console.log('test')
       main.innerHTML = "";
       makePage()

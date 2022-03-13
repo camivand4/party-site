@@ -104,7 +104,7 @@ function App() {
                   <div className="light-b pd4 rad" id="users">
                     {
                       info.map((info) => {
-                        return <h2 key={info.id}>Amount per person: <br></br> € {info.price / info.deelnemers}</h2>
+                        return <h2 key={info.id}>Amount per person: <br></br> € Math.round({info.price / info.deelnemers})</h2>
                       }) 
                     }
                       <h2>Paid:</h2>
