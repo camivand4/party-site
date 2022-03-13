@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/http//camivand4.github.io/party-site/static/css/main.90ca46e3.css",
+    "main.js": "/http//camivand4.github.io/party-site/static/js/main.b9589361.js",
+    "static/js/787.71e672d5.chunk.js": "/http//camivand4.github.io/party-site/static/js/787.71e672d5.chunk.js",
+    "index.html": "/http//camivand4.github.io/party-site/index.html",
+    "main.90ca46e3.css.map": "/http//camivand4.github.io/party-site/static/css/main.90ca46e3.css.map",
+    "main.b9589361.js.map": "/http//camivand4.github.io/party-site/static/js/main.b9589361.js.map",
+    "787.71e672d5.chunk.js.map": "/http//camivand4.github.io/party-site/static/js/787.71e672d5.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.90ca46e3.css",
+    "static/js/main.b9589361.js"
+  ]
+}
