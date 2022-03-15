@@ -157,6 +157,11 @@ li {
   gap: 20px;
 }
 
+.notActive {
+  text-decoration: line-through;
+  display: none;
+}
+
 @media (max-width: 1400px) {
   main {
     flex-direction: column;

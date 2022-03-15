@@ -47,6 +47,16 @@ function App() {
     }
   };
 
+  let test = 0;
+
+  users.map((user, index) => {
+      if (user.active == true) {
+        test += 1;
+      }
+    }
+  )
+
+
   return (
     <div className="App">
       <header className="dark-b center rad">Cama's party</header>
@@ -94,14 +104,17 @@ function App() {
               <div className="amountPerPerson">
                 <h2>
                   Amount per person:{' '}
-                  {'€' + Math.round(info[0].price / users.length)}
+                  {'€' + Math.round(info[0].price / test)}
+                  {console.log(test)}
                 </h2>
                 <span className='arrow' ref={arrow}>▼</span>
               </div>
               <div className="usersBlock" ref={usersBlock}>
                 <h2>Paid:</h2>
                 {users.map((user, index) => (
-                  <label key={index} htmlFor={user.name} className="user">
+                  <div key={index}>
+                  { user.active ?  (
+                    <label htmlFor={user.name} className="user">
                     <span>{user.name}</span>
                     <input
                       type="checkbox"
@@ -110,7 +123,21 @@ function App() {
                       readOnly
                       checked={user.paid}
                     />
-                  </label>
+                    </label>
+                  ) : (
+                    <label htmlFor={user.name} className="notActive">
+                    <span>{user.name}</span>
+                    <input
+                      type="checkbox"
+                      name={user.name}
+                      id={user.name}
+                      readOnly
+                      checked={user.paid}
+                    />
+                    </label>
+                    )
+                  }
+                  </div>
                 ))}
               </div>
             </div>
