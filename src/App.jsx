@@ -61,7 +61,7 @@ function App() {
                     <h2>Waar:</h2>
                     <p>{info[0].where}</p>
                     <a href={info[0].whereLink}>Link to google maps</a>
-                    <p>{info[0].whereExtra}</p>
+                    <div dangerouslySetInnerHTML={{ __html: info[0].whereExtra }}></div>
                   </div>
                   <div>
                     <h2>Wanneer:</h2>
