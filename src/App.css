@@ -1,13 +1,8 @@
-html, body {
+html,
+body {
   padding: 0;
   margin: 0;
   font-family: arial;
-}
-
-body {
-  padding: 4vh;
-  height: 92vh;
-  width: auto;
 }
 
 .rad {
@@ -32,14 +27,15 @@ body {
 }
 
 header {
-  height: 8vh;
   color: white;
   font-size: 2.5rem;
   margin-bottom: 4vh;
+  padding: 20px;
+  text-align: center;
 }
- 
+
 main {
- display: flex;
+  display: flex;
 }
 
 .center {
@@ -66,27 +62,39 @@ main {
 }
 
 h1 {
-  text-decoration: underline;
   color: #505d5b;
-  font-size: 2rem;
+  font-size: 1.5rem;
 }
 
 h2 {
   color: #505d5b;
   font-size: 1.5rem;
+  line-height: 1.4;
+}
+
+p {
+  line-height: 1.4;
 }
 
 #info {
   display: flex;
   justify-content: space-between;
   margin-bottom: 4vh;
+  gap: 20px;
 }
 
-#info div {
+#info > div {
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  gap: 20px;
+}
+
+#info > div > div {
   border: 2px solid #505d5b;
   border-radius: 10px;
   padding: 2vh;
-  width: 15vw;
+  flex: 1;
 }
 
 .checkBox {
@@ -100,14 +108,13 @@ h2 {
 }
 
 li {
-  height: 4vh;
+  line-height: 1.5;
 }
 
 #start {
   display: flex;
   flex-direction: column;
-  width: 30vw;
-  height: 30vh;
+  width: 300px;
   margin-left: auto;
   margin-right: auto;
   margin-top: 25vh;
@@ -121,14 +128,85 @@ li {
 
 #start button {
   margin-bottom: 2vh;
-  height: 4vh;
-  padding: 1vh;
-  /* background: none; */
-	color: inherit;
-	border: none;
-	padding: 0;
-	font: inherit;
-	cursor: pointer;
-	outline: inherit;
+  padding: 10px;
+  border: none;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
   color: white;
+}
+
+.cur-point {
+  cursor: pointer;
+}
+
+.usersBlock label {
+  line-height: 2;
+}
+
+.usersBlock label span {
+  margin-right: 8px;
+}
+
+.arrow {
+  display: none;
+  user-select: none;
+}
+
+.amountPerPerson {
+  gap: 20px;
+}
+
+@media (max-width: 1400px) {
+  main {
+    flex-direction: column;
+  }
+
+  #users {
+    width: 100%;
+    box-sizing: border-box;
+    margin-bottom: 4vh;
+  }
+
+  #left {
+    order: 1;
+  }
+
+  #info {
+    flex-direction: column;
+  }
+
+  #info > div {
+    justify-content: start;
+  }
+
+  .amountPerPerson {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: #505d5b;
+  }
+
+  .usersBlock {
+    display: none;
+  }
+
+  .usersBlock.show {
+    display: block;
+  }
+
+  .arrow {
+    display: unset;
+    transition: transform .2s ease-out;
+  }
+
+  .rotate {
+    transform: rotate(180deg);
+  }
+}
+
+@media (max-width: 900px) {
+  #info > div {
+    flex-direction: column;
+  }
 }
