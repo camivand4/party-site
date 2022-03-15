@@ -68,31 +68,31 @@ function App() {
   let create = (nameCreate, what, id, classy, append, text, hrefText, attribute) => {
 
     // create element with what
-    let nameCreate = document.createElement(what)
+    this.nameCreate = document.createElement(what)
 
     // if id != null set an id
     if (id !== null) {
-      nameCreate.setAttribute('id', id)
+      this.nameCreate.setAttribute('id', id)
     }
 
     // if class != null set classes
     if (classy !== null) {
       classy.forEach(element => {
-        nameCreate.classList.add(element)
+        this.nameCreate.classList.add(element)
       });
     }
 
     // append named var to appended var
-    append.appendChild(nameCreate);
+    append.appendChild(this.nameCreate);
 
     // if text != null set text
     if (text !== null) {
-      nameCreate.innerHTML = text
+      this.nameCreate.innerHTML = text
     }
 
     // if href != null set link
     if (hrefText !== null) {
-      nameCreate.href =hrefText
+      this.nameCreate.href =hrefText
     }
 
   }
@@ -103,7 +103,6 @@ function App() {
   let makePage = () => {
     // div_left
     create('div_left', 'div', 'left', null, main, null, null, null);
-
 
     // div_right
     create('div_right', 'div', 'users', ['light-b', 'pd4', 'rad'], main, null, null, null);
