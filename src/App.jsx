@@ -103,14 +103,14 @@ function App() {
             >
               <div className="amountPerPerson">
                 <h2>
-                  Amount per person:{' '}
+                  Bedrag per persoon:{' '}
                   {'€' + Math.round(info[0].price / test)}
                   {console.log(test)}
                 </h2>
                 <span className='arrow' ref={arrow}>▼</span>
               </div>
               <div className="usersBlock" ref={usersBlock}>
-                <h2>Paid:</h2>
+                <h2>Betaald:</h2>
                 {users.map((user, index) => (
                   <div key={index}>
                   { user.active ?  (
