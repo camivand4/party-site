@@ -94,7 +94,7 @@ function App() {
               <div className="amountPerPerson">
                 <h2>
                   Amount per person:{' '}
-                  {'€' + Math.round(info[0].price / info[0].deelnemers)}
+                  {'€' + Math.round(info[0].price / users.length)}
                 </h2>
                 <span className='arrow' ref={arrow}>▼</span>
               </div>
