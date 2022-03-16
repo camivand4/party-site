@@ -78,7 +78,7 @@ function App() {
                     <div dangerouslySetInnerHTML={{ __html: info[0].when }}></div>
                     <br />
                     <h2>Contact:</h2>
-                    <div dangerouslySetInnerHTML={{ __html: info[0].when }}></div>
+                    <div dangerouslySetInnerHTML={{ __html: info[0].contact }}></div>
                   </div>
                   <div>
                     <h2>Betaling:</h2>
