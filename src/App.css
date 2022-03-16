@@ -5,6 +5,12 @@ body {
   font-family: arial;
 }
 
+body {
+  background-image: url('/public/images/beer2.svg');
+  background-size: 5rem;
+  background-repeat: space;
+}
+
 .rad {
   border-radius: 10px;
 }
