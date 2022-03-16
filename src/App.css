@@ -10,10 +10,20 @@ html {
 }
 
 body {
+  position: relative;
+  min-height: 100vh;
+}
+
+body::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  display: block;
   background-image: url('/public/images/beer3.svg');
   background-size: 8rem;
   background-repeat: space;
-  min-height: 100vh;
+  opacity: 0.5;
 }
 
 .rad {
@@ -75,12 +85,14 @@ main {
 h1 {
   color: #505d5b;
   font-size: 1.5rem;
+  margin-top: 0;
 }
 
 h2 {
   color: #505d5b;
   font-size: 1.5rem;
   line-height: 1.4;
+  margin-top: 0;
 }
 
 p {
@@ -217,7 +229,7 @@ li {
 
   .arrow {
     display: unset;
-    transition: transform .2s ease-out;
+    transition: transform 0.2s ease-out;
   }
 
   .rotate {
