@@ -10,9 +10,10 @@ html {
 }
 
 body {
-  background-image: url('/public/images/beer2.svg');
-  background-size: 5rem;
+  background-image: url('/public/images/beer3.svg');
+  background-size: 8rem;
   background-repeat: space;
+  min-height: 100vh;
 }
 
 .rad {
