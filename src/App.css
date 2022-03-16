@@ -173,6 +173,10 @@ li {
   display: none;
 }
 
+.luca {
+  display: none;
+}
+
 @media (max-width: 1400px) {
   main {
     flex-direction: column;
@@ -224,5 +228,8 @@ li {
 @media (max-width: 900px) {
   #info > div {
     flex-direction: column;
+  }
+  .luca {
+    display: block;
   }
 }

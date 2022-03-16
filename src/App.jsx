@@ -108,7 +108,6 @@ function App() {
                 <h2>
                   Bedrag per persoon:{' '}
                   {'€' + Math.round(info[0].price / test)}
-                  {console.log(test)}
                 </h2>
                 <span className='arrow' ref={arrow}>▼</span>
               </div>
@@ -142,7 +141,7 @@ function App() {
                   }
                   </div>
                 ))}
-                <p>mierenneuker Luca</p>
+                <p className='luca'>mierenneuker Luca</p>
               </div>
             </div>
           </>
