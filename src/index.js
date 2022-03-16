@@ -4,8 +4,6 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import './App.css';
 
-document.title="Cama's party"
-
 ReactDOM.render(
   <React.StrictMode>
     <App />
