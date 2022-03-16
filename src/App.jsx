@@ -50,7 +50,7 @@ function App() {
   let test = 0;
 
   users.map((user, index) => {
-      if (user.active == true) {
+      if (user.active === true) {
         test += 1;
       }
     }
@@ -75,7 +75,7 @@ function App() {
                   </div>
                   <div>
                     <h2>Wanneer:</h2>
-                    <p>{info[0].when}</p>
+                    <div dangerouslySetInnerHTML={{ __html: info[0].when }}></div>
                   </div>
                   <div>
                     <h2>Betaling:</h2>
@@ -88,7 +88,7 @@ function App() {
                 <h2>Wat neem je mee?</h2>
                 <ul>
                   {wTB.map((wtb, index) => (
-                    <li key={index}>{wtb.a}</li>
+                    <li key={index} dangerouslySetInnerHTML={{ __html: wtb.a }}></li>
                   ))}
                 </ul>
               </div>
