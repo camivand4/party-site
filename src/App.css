@@ -5,6 +5,10 @@ body {
   font-family: arial;
 }
 
+html {
+  background-color: white;
+}
+
 body {
   background-image: url('/public/images/beer2.svg');
   background-size: 5rem;
