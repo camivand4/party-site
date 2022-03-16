@@ -3,7 +3,7 @@
   "name": "Create React App Sample",
   "icons": [
     {
-      "src": "beer.svg",
+      "src": "public/images/beer3.svg",
       "type": "image/svg"
     }
   ],
