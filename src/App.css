@@ -1,0 +1,247 @@
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: arial;
+}
+
+html {
+  background-color: white;
+}
+
+body {
+  position: relative;
+  min-height: 100vh;
+}
+
+body::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  display: block;
+  background-image: url('/public/images/beer3.svg');
+  background-size: 8rem;
+  background-repeat: space;
+  opacity: 0.5;
+}
+
+.rad {
+  border-radius: 10px;
+}
+
+.dark-b {
+  background-color: #505d5b;
+}
+
+.mid-b {
+  background-color: #8e9e9d;
+}
+
+.light-b {
+  background-color: #eaf0f3;
+}
+
+.App {
+  padding: 4vh;
+  margin: 0;
+}
+
+header {
+  color: white;
+  font-size: 2.5rem;
+  margin-bottom: 4vh;
+  padding: 20px;
+  text-align: center;
+}
+
+main {
+  display: flex;
+}
+
+.center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pd4 {
+  padding: 4vh;
+}
+
+#left {
+  margin-right: 4vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+#users {
+  display: flex;
+  flex-direction: column;
+  margin-left: auto;
+}
+
+h1 {
+  color: #505d5b;
+  font-size: 1.5rem;
+  margin-top: 0;
+}
+
+h2 {
+  color: #505d5b;
+  font-size: 1.5rem;
+  line-height: 1.4;
+  margin-top: 0;
+}
+
+p {
+  line-height: 1.4;
+}
+
+#info {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 4vh;
+  gap: 20px;
+}
+
+#info > div {
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  gap: 20px;
+}
+
+#info > div > div {
+  border: 2px solid #505d5b;
+  border-radius: 10px;
+  padding: 2vh;
+  flex: 1;
+}
+
+.checkBox {
+  pointer-events: none;
+  margin-left: 2vh;
+}
+
+.user {
+  display: flex;
+  align-items: center;
+}
+
+li {
+  line-height: 1.5;
+}
+
+#start {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 25vh;
+}
+
+#start input {
+  margin-bottom: 2vh;
+  height: 4vh;
+  padding: 1vh;
+}
+
+#start button {
+  margin-bottom: 2vh;
+  padding: 10px;
+  border: none;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
+  color: white;
+}
+
+.cur-point {
+  cursor: pointer;
+}
+
+.usersBlock label {
+  line-height: 2;
+}
+
+.usersBlock label span {
+  margin-right: 8px;
+}
+
+.arrow {
+  display: none;
+  user-select: none;
+}
+
+.amountPerPerson {
+  gap: 20px;
+}
+
+.notActive {
+  text-decoration: line-through;
+  display: none;
+}
+
+.luca {
+  display: none;
+}
+
+@media (max-width: 1400px) {
+  main {
+    flex-direction: column;
+  }
+
+  #users {
+    width: 100%;
+    box-sizing: border-box;
+    margin-bottom: 4vh;
+  }
+
+  #left {
+    order: 1;
+  }
+
+  #info {
+    flex-direction: column;
+  }
+
+  #info > div {
+    justify-content: start;
+  }
+
+  .amountPerPerson {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: #505d5b;
+  }
+
+  .usersBlock {
+    display: none;
+  }
+
+  .usersBlock.show {
+    display: block;
+  }
+
+  .arrow {
+    display: unset;
+    transition: transform 0.2s ease-out;
+  }
+
+  .rotate {
+    transform: rotate(180deg);
+  }
+}
+
+@media (max-width: 900px) {
+  #info > div {
+    flex-direction: column;
+  }
+  .luca {
+    display: block;
+  }
+}
