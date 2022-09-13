@@ -10,7 +10,7 @@ export default function InfoComponent(props) {
         {
             Object.keys(a).map((key) => {
                 if (key !== "title" && key !==  "id" && key !==  "price") {
-                    return (<p key={key} dangerouslySetInnerHTML={{ __html: a[key] }}></p>)
+                    return (<div><p key={key} dangerouslySetInnerHTML={{ __html: a[key] }}></p></div>)
                 }
             })
         }

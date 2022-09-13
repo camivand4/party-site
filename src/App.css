@@ -107,10 +107,17 @@ p {
 }
 
 #info > div {
-  display: flex;
-  flex: 1;
+  /* display: flex;
+  flex: 1; */
   justify-content: center;
+  flex-wrap: wrap;
   gap: 20px;
+}
+
+.infoComponents {
+  display: grid;
+  grid-template-columns: 24% 24% 24% 24%;
+  gap: 10px;
 }
 
 #info > div > div {
@@ -185,8 +192,43 @@ li {
   display: none;
 }
 
-.luca {
-  display: none;
+.grid {
+  display: grid;
+}
+
+.usersAdmin {
+  width: 80vw;
+  grid-template-columns: 20% 20% 20% 20%;
+  grid-gap: 10px;
+  /* grid-row-gap: 10px; */
+  /* border: 1px solid black; */
+}
+
+.gridLine {
+  border: 1px solid grey;
+  background-color: #d7dbdb;
+  padding: 10px;
+}
+
+.updateButton {
+  background-color: #505d5b;
+  color: white;
+  margin-right: 10px;
+  border: none;
+}
+
+.updateButton:active {
+  background-color: green;
+}
+
+.deleteButton:active {
+  background-color: red;
+}
+
+.deleteButton {
+  background-color: #505d5b;
+  color: white;
+  border: none;
 }
 
 @media (max-width: 1400px) {
@@ -209,6 +251,8 @@ li {
   }
 
   #info > div {
+    /* display: flex;
+    flex: 1; */
     justify-content: start;
   }
 
@@ -239,6 +283,8 @@ li {
 
 @media (max-width: 900px) {
   #info > div {
+    display: flex;
+    flex: 1;
     flex-direction: column;
   }
   .luca {

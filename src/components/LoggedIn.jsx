@@ -13,7 +13,7 @@ export const LoggedIn = (props) => {
       {/* info */}
       <div id="info" className="light-b pd4 rad">
         <h1>Info:</h1>
-        <div>
+        <div className='infoComponents'>
           {props.info.map(newInfo => { return (<InfoComponent newInfo={newInfo}/>)})}
         </div>
       </div>
@@ -46,6 +46,7 @@ export const LoggedIn = (props) => {
       </div>
       <div className="usersBlock" ref={props.usersBlock}>
         <h2>Betaald:</h2>
+        
         {props.users.map((user, index) => (
           <div key={index}>
           { user.active ?  (

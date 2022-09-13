@@ -12,7 +12,6 @@ const [loggedIn, setLoggedIn] = useState(false);
 const [admin, setAdmin] = useState(false);
 
 // Password
-// TODO: change passwords and config api
 let checkPassword = (password) => {
   if (password === process.env.REACT_APP_PASSWORD) {
     setLoggedIn(true);

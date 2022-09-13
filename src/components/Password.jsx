@@ -2,9 +2,6 @@ import React from 'react'
 
 export const Password = (props) => {
 
-    // const [loggedIn, setLoggedIn] = useState(false);
-    // const [admin, setAdmin] = useState(false);
-
     let checkPassword2 = () => {
         let value = document.getElementById("password").value;
        props.checkPassword(value)
@@ -23,4 +20,5 @@ export const Password = (props) => {
         </button>
   </form>
   )
+  
 }
