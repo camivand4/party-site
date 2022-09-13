@@ -1,7 +1,7 @@
 import React from 'react'
 import { useState, useEffect } from 'react';
 import { db } from '../firebase-config';
-import { collection, getDocs, addDoc, updateDoc, doc } from 'firebase/firestore';
+import { collection, getDocs, addDoc, updateDoc, doc, deleteDoc } from 'firebase/firestore';
 
 export const Admin = () => {
 
@@ -42,26 +42,26 @@ export const Admin = () => {
   }
 
   const updateUser = async (id) => {
-    const userDoc = doc(db, "users", id)
-    let newId = "name"+id
-    let newName = document.getElementById(newId).value
-    const newFields = {name: newName}
-    await updateDoc(userDoc, newFields)
+    const userDoc = doc(db, "users", id);
+    let newId = "name"+id;
+    let newName = document.getElementById(newId).value;
+    const newFields = {name: newName};
+    await updateDoc(userDoc, newFields);
   }
 
   const deleteUser = async (id) => {
-    const userDoc = doc(db, "users", id)
-    let newId = "name"+id
-    let newName = document.getElementById(newId).value
-    const newFields = {name: newName}
-    await updateDoc(userDoc, newFields)
+    const userDoc = doc(db, "users", id);
+    await deleteDoc(userDoc);
   }
   
   return (
     <div>
+      <div className='margin-b-10'>
         <label htmlFor="name">Name: </label>
         <input type="text" id='name' onChange={(event) => { setNewName(event.target.value) }} />
         <button onClick={createUser}>Create</button>
+      </div>
+
 
         <div className='usersAdmin grid'>
           {users.map((user, index) => (
