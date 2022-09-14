@@ -2,6 +2,9 @@ import React from 'react'
 import { useState, useEffect } from 'react';
 import { db } from '../firebase-config';
 import { collection, getDocs, addDoc, updateDoc, doc, deleteDoc } from 'firebase/firestore';
+import AdminCreate from './AdminCreate';
+import AdminUsersList from './AdminUsersList';
+import AdminWTBList from './AdminWTBList';
 
 export const Admin = () => {
 
@@ -81,71 +84,31 @@ export const Admin = () => {
     await deleteDoc(wTBDoc);
   }
 
+  let buttonDelete = true
+
+  const changeDeleteButton = async () => {
+    buttonDelete=!buttonDelete
+    console.log(buttonDelete)
+  }
+
   return (
     <div>
+      <div>
+        {buttonDelete ? (<p>hello</p>): (<p>niet hello</p>)}
+        <button onClick={() => {changeDeleteButton()}}>Show delete</button>
+      </div>
+
       <h1>Users:</h1>
-
-      <div className='margin-b-10'>
-        <label htmlFor="name">Name: </label>
-        <input type="text" id='name' onChange={(event) => { setNewName(event.target.value) }} />
-        <button onClick={createUser}>Create</button>
-      </div>
-
-      <div className='usersAdmin grid margin-b-10'>
-        {users.map((user, index) => (
-          <>
-          <div key={index+"name"+user.name} className="gridLine">
-            <label htmlFor="name">{user.name}: </label>
-            <input id={"name"+user.id} type="text" placeholder={user.name} defaultValue={user.name} />
-          </div>
-          <div key={index+"active"+user.name} className="gridLine">
-            <label htmlFor="active">Active: </label>
-            {user.active ? (
-              <input id={"active"+user.id} type="checkbox" defaultChecked value="true" />
-            ) : (
-              <input id={"active"+user.id} type="checkbox" value="false"/>
-            )}
-          </div>
-          <div key={index+"paid"+user.name} className="gridLine">
-            <label htmlFor="paid">Paid: </label>
-            {user.paid ? (
-              <input id={"paid"+user.id} type="checkbox" defaultChecked value="true" />
-            ) : (
-              <input id={"paid"+user.id} type="checkbox" value="false"/>
-            )}
-          </div>
-          <div key={index} className="gridLine">
-            <button className='updateButton' onClick={() => {updateUser(user.id)}}>Update</button>
-            <button className='deleteButton' onClick={() => {deleteUser(user.id)}}>Delete</button>
-          </div>
-          </>
-        ))}
-      </div>
+      <AdminCreate title={"Name"} setNew={setNewName} createNew={createUser} />
+      <AdminUsersList users={users} updateUser={updateUser} deleteUser={deleteUser} />
 
       <h1>Info:</h1>
 
 
 
       <h1>What to bring:</h1>
-
-      <div className='margin-b-10'>
-        <label htmlFor="wTB">What to bring: </label>
-        <input type="text" id='wTB' onChange={(event) => { setNewWTB(event.target.value) }} />
-        <button onClick={createWTB}>Create</button>
-      </div>
-
-      <div className='wTBAdmin margin-b-10 flex column'>
-        {wTB.map((wtb, index) => (
-          <div className='flex column wTBAdminBlock'>
-            <div className='flex'>
-              <input key={wtb.a+index} id={wtb.id} type="text" defaultValue={wtb.a} className="margin-b-10 wTBAdminInput"/>
-              <button className='updateButton' onClick={() => {updateWTB(wtb.id)}}>Update</button>
-              <button className='deleteButton' onClick={() => {deleteWTB(wtb.id)}}>Delete</button>
-            </div>
-            <p dangerouslySetInnerHTML={{ __html: wtb.a }}></p>
-          </div>
-        ))}
-      </div>
+      <AdminCreate title={"What to bring"} setNew={setNewWTB} createNew={createWTB} />
+      <AdminWTBList wTB={wTB} updateWTB={updateWTB} deleteWTB={deleteWTB} />
 
     </div>
   )

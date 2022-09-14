@@ -232,7 +232,7 @@ li {
 }
 
 .deleteButton {
-  background-color: #505d5b;
+  background-color: #5d5050;
   color: white;
   border: none;
 }
@@ -242,7 +242,7 @@ li {
 }
 
 .wTBAdminInput {
-  width: 60%;
+  width: 100%;
   margin-right: 10px;
 }
 
@@ -306,7 +306,11 @@ li {
     flex: 1;
     flex-direction: column;
   }
-  .luca {
-    display: block;
+  .wTBAdminChangeable {
+    flex-direction: column;
+  }
+
+  .wTBAdminChangeable > button {
+    margin-bottom: 10px;
   }
 }
