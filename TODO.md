@@ -1,5 +1,4 @@
 - Add info to admin panel
-- Make adminpage refresh on edit
-- Clean up admin with more components
+- Make admin & login page refresh values on edit
 - Make admin page responsive
 - Add images
