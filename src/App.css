@@ -59,6 +59,14 @@ main {
   display: flex;
 }
 
+.flex {
+  display: flex;
+}
+
+.column {
+  flex-direction: column;
+}
+
 .center {
   display: flex;
   align-items: center;
@@ -233,6 +241,11 @@ li {
 
 .margin-b-10 {
   margin-bottom: 10px;
+}
+
+.wTBAdminInput {
+  width: 60%;
+  margin-right: 10px;
 }
 
 @media (max-width: 1400px) {
