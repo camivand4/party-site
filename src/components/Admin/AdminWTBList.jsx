@@ -5,7 +5,7 @@ export default function AdminWTBList(props) {
     <div className='wTBAdmin margin-b-10 flex column'>
         {
             props.wTB.map((wtb, index) => (
-            <div className='flex column wTBAdminBlock'>
+            <div className='flex column wTBAdminBlock' key={index}>
                 <div className='flex wTBAdminChangeable'>
                 <input key={wtb.a+index} id={wtb.id} type="text" defaultValue={wtb.a} className="margin-b-10 wTBAdminInput"/>
                 <button className='updateButton' onClick={() => {props.updateWTB(wtb.id)}}>Update</button>
