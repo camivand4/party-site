@@ -2,9 +2,9 @@ import React from 'react'
 import { useState, useEffect } from 'react';
 import { db } from '../firebase-config';
 import { collection, getDocs, addDoc, updateDoc, doc, deleteDoc } from 'firebase/firestore';
-import AdminCreate from './AdminCreate';
-import AdminUsersList from './AdminUsersList';
-import AdminWTBList from './AdminWTBList';
+import AdminCreate from './Admin/AdminCreate';
+import AdminUsersList from './Admin/AdminUsersList';
+import AdminWTBList from './Admin/AdminWTBList';
 
 export const Admin = () => {
 
