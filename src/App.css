@@ -208,8 +208,6 @@ li {
   width: 80vw;
   grid-template-columns: 20% 20% 20% 20%;
   grid-gap: 10px;
-  /* grid-row-gap: 10px; */
-  /* border: 1px solid black; */
 }
 
 .gridLine {
@@ -248,6 +246,12 @@ li {
   margin-right: 10px;
 }
 
+.wTBAdminBlock {
+  border: 1px solid grey;
+  margin: 10px;
+  padding: 10px;
+}
+
 @media (max-width: 1400px) {
   main {
     flex-direction: column;
@@ -268,8 +272,6 @@ li {
   }
 
   #info > div {
-    /* display: flex;
-    flex: 1; */
     justify-content: start;
   }
 

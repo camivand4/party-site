@@ -1,0 +1,5 @@
+- Add info to admin panel
+- Make adminpage refresh on edit
+- Clean up admin with more components
+- Make admin page responsive
+- Add images
