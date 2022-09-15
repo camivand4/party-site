@@ -5,6 +5,7 @@ import { collection, getDocs, addDoc, updateDoc, doc, deleteDoc } from 'firebase
 import AdminCreate from './Admin/AdminCreate';
 import AdminUsersList from './Admin/AdminUsersList';
 import AdminWTBList from './Admin/AdminWTBList';
+import AdminInfoList from './Admin/AdminInfoList';
 
 export const Admin = () => {
 
@@ -74,6 +75,24 @@ export const Admin = () => {
     await updateDoc(wTBDoc, newFields);
   }
 
+  const updateInfo = async (id, what) => {
+    const infoDoc = doc(db, "info", id);
+    
+    if (what === "price") {
+      // price
+      let newValue = document.getElementById("price"+id).value;
+
+      const newFields = {price: newValue};
+      await updateDoc(infoDoc, newFields);
+    } else {
+      // when
+      let newValue = document.getElementById("when"+id).value;
+
+      const newFields = {1: newValue};
+      await updateDoc(infoDoc, newFields);
+    }
+  }
+
   const deleteUser = async (id) => {
     const userDoc = doc(db, "users", id);
     await deleteDoc(userDoc);
@@ -104,7 +123,7 @@ export const Admin = () => {
 
       <h1>Info:</h1>
 
-
+      <AdminInfoList info={info} updateInfo={updateInfo} />
 
       <h1>What to bring:</h1>
       <AdminCreate title={"What to bring"} setNew={setNewWTB} createNew={createWTB} />

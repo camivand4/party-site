@@ -16,7 +16,7 @@ let checkPassword = (password) => {
   if (password === process.env.REACT_APP_PASSWORD) {
     setLoggedIn(true);
     // TODO: delete setAdmin
-    setAdmin(true);
+    // setAdmin(true);
   } else if (password === process.env.REACT_APP_ADMIN) {
     setLoggedIn(true);
     setAdmin(true);

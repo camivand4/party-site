@@ -252,6 +252,10 @@ li {
   padding: 10px;
 }
 
+.width100 {
+  width: 100%;
+}
+
 @media (max-width: 1400px) {
   main {
     flex-direction: column;
